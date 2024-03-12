@@ -15,7 +15,7 @@ longju_xianqi.0000 = {
 	theme = martial
 	left_portrait = {
 		character = scope:wodeyinqi
-		animation = shock
+		animation = eyeroll
 	}
 	right_portrait = {
 		character = scope:wodepengyou
@@ -83,12 +83,12 @@ longju_xianqi.0001 = {#普
 		animation = ecstasy
 	}
 	immediate = {
-	    root = {
-		add_hook = {target = scope:wodepengyou type = ganlewodelaopo_hook}
+		root = {
+			add_hook = {target = scope:wodepengyou type = ganlewodelaopo_hook}
 		}
-	    scope:wodepengyou = {
+		scope:wodepengyou = {
 		add_trait = lustful
-	}
+		}
 		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {had_sex_with_effect = {CHARACTER = scope:wodeyinqi PREGNANCY_CHANCE = pregnancy_chance}}
@@ -369,6 +369,10 @@ longju_xianqi.0020 = {#不安慰，妻子变成肉便器
 		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {had_sex_with_effect = {CHARACTER = scope:wodeyinqi PREGNANCY_CHANCE = pregnancy_chance}}
+		#Carn_rape_effect = {
+			RAPIST = wodepengyou
+			VICTIM = wodeyinqi
+		}
 	}
 	option = {#厕所
 		name = longju_xianqi.0020.a
@@ -943,12 +947,17 @@ longju_xianqi.0050 = {#不回来了
 		    change_diplomacy = 10
 			add_trait = trait_whole_of_body
 			set_relation_soulmate = scope:wodepengyou
-		   }
+		}
+		scope:wodeyinqi = {
+			carn_add_fetish_effect = {
+				being_raped
+			}
+		}
 		scope:wodepengyou = { 
 		    random_spouse = {
-			    death = { death_reason = death_duel killer = scope:wodepengyou}
+			    #death = { death_reason = death_duel killer = scope:wodepengyou}
 			}
-		    marry = scope:wodeyinqi
+		    #marry = scope:wodeyinqi
 		   }
 		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
