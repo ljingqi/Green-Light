@@ -1,0 +1,506 @@
+
+longju0001 = {
+	name="Aphrodite"
+	female = yes
+	dynasty= 680001
+	dna = longju_dna_Aphrodite
+    martial = 12
+	diplomacy = 32
+	intrigue = 28
+	stewardship = 19
+	learning = 22
+	prowess = 30
+	trait = education_diplomacy_4
+    trait = blood_of_prophet
+	trait = pure_blooded
+	trait = forgiving
+    trait = generous
+    trait = lustful
+    trait = rakish
+	trait = beauty_good_3
+	trait = shenzhixiemai
+    trait = shenzhimihu
+    trait = shenzhigangqiang
+    trait = shenzhitankou
+    trait = shenzhizigong
+    trait = seducer
+	trait = reveler_3
+	trait = deviant
+	trait = disloyal
+	religion="hellenic_pagan"
+	culture = "greek"
+    set_immortal_age = 18
+	850.12.1={
+		birth=yes 
+		effect = {add_character_flag = shi_nv_shen}
+	}
+	9999.9.11={
+		death=yes
+	}
+}
+
+longju0002 = {
+	name="Athena"
+	female = yes
+	dynasty= 680002
+	dna = longju_dna_Athana
+        martial = 32
+	diplomacy = 17
+	intrigue = 15
+	stewardship = 20
+	learning = 22
+	prowess = 99
+	trait = education_martial_4
+        trait = blood_of_prophet
+	trait = arrogant
+        trait = wrathful
+        trait = chaste
+        trait = just
+        trait = blademaster 
+	trait = beauty_good_3
+	trait = shenzhixiemai
+    trait = shenzhimihu
+    trait = shenzhigangqiang
+    trait = shenzhitankou
+    trait = shenzhizigong
+        trait = physique_good_3
+        trait = strong
+	religion="hellenic_pagan"
+	culture = "greek"
+        set_immortal_age = 18
+	850.12.1={
+		birth=yes
+		effect = {add_character_flag = shi_nv_shen}
+	}
+	9999.9.11={
+		death=yes
+	}
+}
+
+longju0003 = {
+	name="Hera"
+	female = yes
+	dynasty= 680003
+	dna = longju_dna_Hera
+    martial = 20
+	diplomacy = 22
+	intrigue = 35
+	stewardship = 16
+	learning = 23
+	prowess = 40
+	trait = education_diplomacy_4
+        trait = blood_of_prophet
+	trait = arrogant
+        trait = wrathful
+        trait = deceitful
+        trait = ambitious
+        trait = paranoid 
+		trait = vengeful
+	trait = beauty_good_3
+	trait = shenzhixiemai
+    trait = shenzhimihu
+    trait = shenzhigangqiang
+    trait = shenzhitankou
+    trait = shenzhizigong
+        trait = intellect_good_2
+        trait = shrewd
+		trait = pure_blooded
+		trait = august
+	religion="hellenic_pagan"
+	culture = "greek"
+        set_immortal_age = 18
+	850.12.1={
+		birth=yes
+		effect = {add_character_flag = shi_nv_shen}
+	}
+	9999.9.11={
+		death=yes
+	}
+}
+
+longju0004 = {
+	name="pandora"
+	female = yes
+	dynasty= 680004
+	dna = longju_dna_Pandora
+        martial = 12
+	diplomacy = 14
+	intrigue = 15
+	stewardship = 7
+	learning = 6
+	prowess = 12
+        trait = education_diplomacy_3
+	trait = lustful
+        trait = greedy
+        trait = deceitful
+        trait = fickle
+        trait = shrewd 
+	trait = beauty_good_3
+	trait = mingqimixue
+    trait = buxiuzhezhixiemai
+    trait = mingqizigong
+        trait = fecund
+        trait = confider
+	religion="hellenic_pagan"
+	culture = "greek"
+        set_immortal_age = 18
+	850.12.1={
+		birth=yes
+	}
+	9999.9.11={
+		death=yes
+	}
+}
+
+longju0005 = {
+	name="carmilla"
+	female = yes
+	dynasty= 680005
+	dna = longju_dna_Carmilla
+        martial = 6
+	diplomacy = 20
+	intrigue = 20
+	stewardship = 14
+	learning = 6
+	prowess = 60
+        trait = blademaster_3
+	trait = hunter_3
+        trait = lustful
+        trait = patient
+        trait = deceitful
+        trait = callous
+	trait = beauty_good_3
+	trait = shenzhixiemai
+    trait = shenzhimihu
+    trait = shenzhigangqiang
+    trait = shenzhitankou
+    trait = shenzhizigong
+        trait = deviant
+        trait = torturer
+	religion="adamitism"
+	culture = "irish"
+        set_immortal_age = 18
+	850.12.1={
+		birth=yes
+		effect = {add_character_flag = shi_nv_shen}
+	}
+	9999.9.11={
+		death=yes
+	}
+}
+
+longju0006 = {
+	name="helen"
+	female = yes
+	dynasty= 680006
+	dna = longju_dna_Helen
+        martial = 9
+	diplomacy = 25
+	intrigue = 15
+	stewardship = 3
+	learning = 10
+	prowess = 5
+        trait = education_diplomacy_4
+	trait = reveler_3
+        trait = lustful
+        trait = patient
+        trait = humble
+        trait = gregarious 
+		trait = trusting 
+	trait = beauty_good_3
+	trait = mingqimixue
+    trait = buxiuzhezhixiemai
+    trait = mingqizigong
+        trait = seducer
+        trait = pure_blooded
+	religion="hellenic_pagan"
+	culture = "greek"
+        set_immortal_age = 18
+	850.12.1={
+		birth=yes
+	}
+	9999.9.11={
+		death=yes
+	}
+}
+
+longju0007 = {
+	name="ishtar"
+	female = yes
+	dynasty= 680007
+	dna = longju_dna_Ishtar
+        martial = 9
+	diplomacy = 25
+	intrigue = 15
+	stewardship = 3
+	learning = 10
+	prowess = 5
+    martial = 12
+	diplomacy = 32
+	intrigue = 28
+	stewardship = 19
+	learning = 22
+	prowess = 30
+	trait = education_diplomacy_4
+        trait = blood_of_prophet
+	trait = forgiving
+        trait = generous
+        trait = lustful
+        trait = rakish
+	trait = beauty_good_3
+	trait = shenzhixiemai
+    trait = shenzhimihu
+    trait = shenzhigangqiang
+    trait = shenzhitankou
+    trait = shenzhizigong
+        trait = seducer
+	religion="hellenic_pagan"
+	culture = "assyrian"
+        set_immortal_age = 18
+	850.12.1={
+		birth=yes
+		effect = {add_character_flag = shi_nv_shen}
+	}
+	9999.9.11={
+		death=yes
+	}
+}
+
+longju0008 = {            # 马尔蒂达公主 
+	name="Mathilde"                         
+	female = yes
+	dynasty= 680008
+	dna = longju_dna_Mathilde
+    martial = 4
+	diplomacy = 6
+	intrigue = 6
+	stewardship = 1
+	learning = 2
+	prowess = 3
+	    trait = education_diplomacy_4
+        trait = blood_of_prophet
+	    trait = pure_blooded
+        trait = generous
+        trait = lustful
+        trait = rakish
+	trait = beauty_good_3
+	trait = mingqimixue
+    trait = buxiuzhezhixiemai
+    trait = mingqizigong
+        trait = shrewd
+	religion="adamitism"
+	culture = "frankish"
+        set_immortal_age = 18
+	850.12.1={
+		birth=yes
+	}
+	9999.9.11={
+		death=yes
+	}
+}
+
+longju0009 = {        # 芙蕾雅公主 
+	name="Flora"
+	female = yes
+	dynasty= 680009
+	dna = longju_dna_Flora
+    martial = 5
+	diplomacy = 6
+	intrigue = 3
+	stewardship = 0
+	learning = 9
+	prowess = 8
+	trait = education_diplomacy_4
+        trait = blood_of_prophet
+	trait = pure_blooded
+        trait = generous
+        trait = lustful
+        trait = rakish
+	trait = beauty_good_3
+	trait = mingqimixue
+    trait = buxiuzhezhixiemai
+    trait = mingqizigong
+        trait = seducer
+	religion="adamitism"
+	culture = "french"
+        set_immortal_age = 18
+	850.12.1={
+		birth=yes
+	}
+	9999.9.11={
+		death=yes
+	}
+}
+
+longju0010 = {
+	name="Xiaji"      # 夏姬
+	female = yes
+	dynasty= 680010
+	dna = longju_dna_Xiaji
+    martial = 8
+	diplomacy = 22
+	intrigue = 8
+	stewardship = 9
+	learning = 9
+	prowess = 0
+	trait = education_diplomacy_4
+        trait = blood_of_prophet
+	trait = pure_blooded
+        trait = gregarious
+        trait = lustful
+        trait = rakish
+	trait = beauty_good_3
+	trait = mingqimixue
+    trait = buxiuzhezhixiemai
+    trait = mingqizigong
+	trait = deviant
+    trait = seducer
+	religion="quanzhen"
+	culture = "han"
+        set_immortal_age = 18
+	850.12.1={
+		birth=yes
+	}
+	9999.9.11={
+		death=yes
+	}
+}
+
+longju0011 = {           # 墨玉
+	name="Moyu"
+	female = yes
+	dynasty= 680011
+	dna = longju_dna_Moyu
+    martial = 0
+	diplomacy = 7
+	intrigue = 4
+	stewardship = 6
+	learning = 10
+	prowess = 4
+	trait = education_diplomacy_4
+        trait = blood_of_prophet
+	trait = pure_blooded
+        trait = generous
+        trait = lustful
+        trait = rakish
+	trait = beauty_good_3
+	trait = mingqimixue
+    trait = buxiuzhezhixiemai
+    trait = mingqizigong
+        trait = seducer
+	religion="quanzhen"
+	culture = "han"
+        set_immortal_age = 18
+	850.12.1={
+		birth=yes
+	}
+	9999.9.11={
+		death=yes
+	}
+}
+
+longju0012 = {
+	name="Marie"             # 玛丽
+	female = yes
+	dynasty= 680012
+	dna = longju_dna_Marie
+    martial = 7
+	diplomacy = 8
+	intrigue = 1
+	stewardship = 9
+	learning = 12
+	prowess = 20
+	trait = education_diplomacy_4
+        trait = blood_of_prophet
+	trait = pure_blooded
+        trait = deviant
+		trait = generous
+        trait = lustful
+        trait = rakish
+		trait = fecund
+	trait = beauty_good_3
+	trait = mingqimixue
+    trait = buxiuzhezhixiemai
+    trait = mingqizigong
+        trait = seducer
+	religion="adamitism"
+	culture = "volhynian"
+        set_immortal_age = 18
+	850.12.1={
+		birth=yes
+	}
+	9999.9.11={
+		death=yes
+	}
+}
+
+longju0013 = {
+	name="Miaoshan"                       # 妙善公主
+	female = yes
+	dynasty= 680013
+	dna = longju_dna_Miaoshan
+    martial = 13
+	diplomacy = 2
+	intrigue = 7
+	stewardship = 4
+	learning = 5
+	prowess = 5
+	trait = education_diplomacy_4
+        trait = blood_of_prophet
+	trait = forgiving
+        trait = pure_blooded
+        trait = lustful
+        trait = rakish
+	trait = beauty_good_3
+	trait = mingqimixue
+    trait = buxiuzhezhixiemai
+    trait = mingqizigong
+        trait = seducer
+	religion="theravada"
+	culture = "punjabi"
+        set_immortal_age = 18
+	850.12.1={
+		birth=yes
+	}
+	9999.9.11={
+		death=yes
+	}
+}
+
+longju0015 = {                # 龙傲天
+	name="Longaotian"
+	male = yes
+	dynasty= 680014
+	dna = longju_dna_Longaotian
+    martial = 30
+	diplomacy = 30
+	intrigue = 30
+	stewardship = 30
+	learning = 30
+	prowess = 50
+	trait = education_diplomacy_4
+    trait = blood_of_prophet
+	trait = shrewd
+    trait = blademaster
+	trait = ambitious
+	trait = rumayibandejugen
+    trait = pure_blooded
+    trait = lustful
+    trait = rakish
+	trait = beauty_good_3
+	trait = intellect_good_3
+	trait = physique_good_3
+	trait = fecund
+	trait = shenming_max
+	trait = shenzhijugen_max
+    trait = seducer
+	religion="quanzhen"
+	culture = "han"
+        set_immortal_age = 18
+	850.12.1={
+		birth=yes
+	}
+	9999.9.11={
+		death=yes
+	}
+}
