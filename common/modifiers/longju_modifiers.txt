@@ -1,0 +1,93 @@
+﻿gong_xian_qi_zi = {
+	icon = horse_dead_positive
+    health = 3
+	stress_loss_mult = 0.3
+    attraction_opinion = 10
+    men_at_arms_maintenance = -0.2
+	clergy_opinion = -20
+}
+
+hei_shu_shu_de_hao_huo_ban = {
+	icon = horse_dead_positive
+	knight_effectiveness_mult = 0.10
+	attraction_opinion = 15
+    prowess = 10
+	advantage = 5
+	monthly_income = 0.5
+    clergy_opinion = -20
+}
+
+huang_mao_te_quan = {
+	icon = horse_dead_positive
+	prowess = 5
+    attraction_opinion = 10
+    men_at_arms_maintenance = -0.2
+	stress_loss_mult = 0.5
+	clergy_opinion = -20
+}
+
+lv_nu_jiao_qi = {
+	icon = horse_dead_positive
+	health = 0.5
+    attraction_opinion = 10
+	monthly_income = 0.5
+	clergy_opinion = -20
+}
+
+xiang_yong_feng_chen_qi_zi = {
+	icon = feast_positive
+        prowess = 10
+	supply_capacity_mult = 8
+	army_maintenance_mult = -0.1
+	general_opinion = 10
+}
+
+you_shi = {
+	icon = feast_nithing_exiled_fp1
+    prowess = 5
+	attraction_opinion = 10
+	army_maintenance_mult = -0.1
+	clergy_opinion = 10
+}
+
+tiao_jiao_you_shi = {
+	icon = feast_nithing_exiled_fp1
+        prowess = 5
+	attraction_opinion = 5
+	clergy_opinion = 5
+}
+
+si_yi_cao_gan_zhu_mu = {
+	icon = feast_horse_dead_negative
+        prowess = 5
+        stress_loss_mult = 0.3
+        army_maintenance_mult = 0.1
+	attraction_opinion = 15
+	clergy_opinion = -15
+}
+
+kai_qi_xin_hang_lu = {
+	icon = horse_dead_negative
+        prowess = 1
+}
+
+zai_yi_ci_chu_jie_qi_zi = {
+	icon = horse_dead_negative
+        general_opinion = 10
+}
+
+zai_yi_ci_xiang_yong_feng_chen_qi_zi = {
+	icon = horse_dead_negative
+        general_opinion = 10
+}
+
+bei_yu_qin_gu_zong = {
+	icon = horse_dead_negative
+        clergy_opinion = -5
+}
+
+de_dao_qi_guai_de_xiang_lian = {
+	icon = blood_positive
+	general_opinion = 10
+    prowess = 3
+}

@@ -1,0 +1,61 @@
+
+# 讨好领主系列事件
+
+ longju_taohao_lingzhu_decision = {
+	picture = "gfx/interface/illustrations/decisions/longju_taohao_lingzhu.dds"
+	desc = longju_taohao_lingzhu_decision
+	selection_tooltip = longju_taohao_lingzhu_decision_tooltip
+	cooldown = { years = 1 }
+	
+	is_shown = { 
+	    is_independent_ruler = no
+	    is_imprisoned = no
+		exists = root.liege
+	}
+	
+	is_valid = {
+	is_independent_ruler = no
+	is_male = yes NOT = {has_trait = eunuch}
+	exists = root.primary_spouse
+	root.liege = { is_male = yes is_imprisoned = no NOT = { has_trait = eunuch }}
+	root.primary_spouse = { OR = {has_trait = beauty_good_3 has_trait = beauty_good_2 has_trait = beauty_good_1} OR = {age < 42 is_immortal = yes} is_imprisoned = no }
+	}
+	
+	effect = {
+	    root.liege = {save_scope_as = wodelingzhu}
+		root.primary_spouse = {save_scope_as = wodeyinqi}
+		if = {# 成年
+		    limit = {root.liege = {NOT = {exists = var:xiangyongfengchenqizi} is_adult = yes }}
+			root.liege = {set_variable = {name = xiangyongfengchenqizi value = 0}}
+			root = {trigger_event = longju_shijian.0400}
+		    }
+		if = {# 未成年
+		    limit = {root.liege = {NOT = {exists = var:xiangyongfengchenqizi} is_adult = no }}
+			root.liege = {set_variable = {name = xiangyongfengchenqizi value = 0}}
+			root = {trigger_event = longju_shijian.0401}
+		    }
+		else_if = {# 成年第二次
+		    limit = {root.liege = {exists = var:xiangyongfengchenqizi var:xiangyongfengchenqizi = 1 }}
+		    root = {trigger_event = longju_shijian.0420}
+		}
+		else_if = {# 成年第三次
+		    limit = {root.liege = {exists = var:xiangyongfengchenqizi var:xiangyongfengchenqizi > 99}}
+		    root = {trigger_event = longju_shijian.0430}
+		}
+	}
+	
+	ai_will_do = {
+		base = 0
+		
+		
+		modifier = {
+		add = 15
+		has_trait = deviant
+		}
+		
+		modifier = {
+		add = 15
+		has_trait = lustful
+		}
+	}
+}

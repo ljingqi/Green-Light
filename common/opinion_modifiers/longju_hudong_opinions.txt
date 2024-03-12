@@ -1,0 +1,118 @@
+﻿xiangyongletadeqizi_opinion = {
+	opinion = 50
+	years = 10
+	decaying = yes
+}
+
+rangwogandehenshuang_opinion = {
+	opinion = 100
+	years = 20
+	decaying = yes
+}
+
+beitagandehenshuang_opinion = {
+	opinion = 60
+	years = 20
+	decaying = yes
+}
+
+beiganchenglemugou_opinion = {
+	opinion = 1000
+	years = 100
+	decaying = no
+}
+qiangdadeqingren_opinion = {
+	opinion = 80
+	years = 100
+	decaying = no
+}
+wunengdezhangfu_opinion = {
+	opinion = -30
+	years = 20
+	decaying = yes
+}
+ruozhe_opinion = {
+	opinion = 30
+	years = 20
+	decaying = yes
+}
+woderoubianqi_opinion = {
+	opinion = 80
+	years = 100
+	decaying = no
+}
+xinqindeweiwozhibing_opinion = {
+	opinion = 30
+	years = 5
+	decaying = yes
+}
+chaoguoyigeyuebuliwo_opinion = {
+	opinion = -40
+	years = 3
+	decaying = yes
+}
+owoqinaideqizi_opinion = {
+	opinion = 50
+	years = 10
+	decaying = yes
+}
+owoqinaidezhangfu_opinion = {
+	opinion = 50
+	years = 10
+	decaying = yes
+}
+owoqinaidezhangfu_opinion = {
+	opinion = 60
+	years = 20
+	decaying = yes
+}
+peibanzhewo_opinion = {
+	opinion = 20
+	years = 2
+	decaying = yes
+}
+zheshiwomenlianggerendemimi_opinion = {
+	opinion = 50
+	years = 100
+	decaying = no
+}
+nilaopozhenbang_opinion = {
+	opinion = 40
+	years = 100
+	decaying = no
+}
+bawoxiangwupinyiyangchujie_opinion = {
+	opinion = -60
+	years = 5
+	decaying = yes
+}
+beimoxusiyiwannongtadeqizi_opinion = {
+	opinion = 100
+	years = 100
+	decaying = no
+}
+beitiaojiao_opinion = {
+	opinion = 10
+	years = 2
+	decaying = yes
+}
+haonendexiancao_opinion = {
+	opinion = 40
+	years = 10
+	decaying = yes
+}
+xiexienirangwowanyouxi_opinion = {
+	opinion = 60
+	years = 10
+	decaying = yes
+}
+nilaopozhenbang_opinion = {
+	opinion = 60
+	years = 10
+	decaying = yes
+}
+beiwanhuaile_opinion = {
+	opinion = 200
+	years = 100
+	decaying = no
+}

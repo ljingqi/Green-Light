@@ -1,0 +1,24 @@
+
+# 每个季度触发
+quarterly_playable_pulse = {
+	random_events = {
+		5 = longju_shijian.0100
+		5 = longju_shijian.0310
+		5 = longju_shijian.0450
+		85 = 0
+	}
+}
+
+# 开局事件
+on_game_start = {
+	events = {
+		longju_xitong.001
+	}
+}
+
+# 生日触发
+on_birthday = {
+	events = {
+		longju_xitong.002
+	}
+}

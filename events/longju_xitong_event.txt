@@ -1,0 +1,43 @@
+﻿namespace = longju_xitong
+
+
+########################
+# 系统事件
+########################
+
+# 长生者外貌控制
+longju_xitong.001 = {
+    scope = none
+    hidden = yes
+	immediate = {
+		character:longju0001 = {set_immortal_age = 18}#阿弗洛狄特
+		character:longju0002 = {set_immortal_age = 18}#雅典娜
+		character:longju0003 = {set_immortal_age = 18}#赫拉
+        character:longju0004 = {set_immortal_age = 18}#潘多拉
+        character:longju0005 = {set_immortal_age = 18}#卡米拉
+        character:longju0006 = {set_immortal_age = 18}#海伦
+        character:longju0007 = {set_immortal_age = 18}#伊什塔尔
+		character:longju0008 = {set_immortal_age = 18}#马尔蒂达公主
+	    character:longju0009 = {set_immortal_age = 18}#芙蕾雅公主
+	    character:longju0010 = {set_immortal_age = 18}#夏姬
+	    character:longju0011 = {set_immortal_age = 18}#墨玉
+	    character:longju0012 = {set_immortal_age = 18}#玛丽
+	    character:longju0013 = {set_immortal_age = 18}#妙善公主
+	    character:longju0014 = {set_immortal_age = 18}#龙傲天
+	}
+}
+
+# 女神治愈疾病
+longju_xitong.002 = {
+hidden = yes
+	immediate = {
+		if = {
+			limit = {has_character_flag = shi_nv_shen shi_bing_ren = yes}
+			jibing_ziyu = yes
+		}
+		else_if = {
+			limit = {has_character_flag = shi_nv_shen shi_can_ji = yes}
+			canji_ziyu = yes
+		}
+	}
+}

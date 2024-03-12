@@ -1,0 +1,72 @@
+﻿
+680001 = {
+	name = "dynn_meishen"
+	culture = "greek"
+	motto = dynn_meishen_motto
+}
+680002 = {
+	name = "dynn_hepingzhishen"
+	culture = "greek"
+	motto = dynn_hepingzhishen_motto
+}
+680003 = {
+	name = "dynn_tianhou"
+	culture = "greek"
+	motto = dynn_tianhou_motto
+}
+680004 = {
+	name = "dynn_zuiezhiyuan"
+	culture = "greek"
+	motto = dynn_zuiezhiyuan_motto
+}
+680005 = {
+	name = "dynn_xixieguishizu"
+	culture = "irishk"
+	motto = dynn_xixieguishizu_motto
+}
+680006 = {
+	name = "dynn_zuimeidenvren"
+	culture = "greek"
+	motto = dynn_zuimeidenvren_motto
+}
+680007 = {
+	name = "dynn_dayinfu"
+	culture = "greek"
+	motto = dynn_dayinfu_motto
+}
+680008 = {
+	name = "dynn_capetian"
+	culture = "frankish"
+	motto = dynn_capetian_motto
+}
+680009 = {
+	name = "dynn_savoy"
+	culture = "french"
+	motto = dynn_savoy_motto
+}
+680010 = {
+	name = "dynn_xia"
+	culture = "gan"
+	motto = dynn_xia_motto
+}
+680011 = {
+	name = "dynn_mo"
+	culture = "han"
+	motto = dynn_mo_motto
+}
+680012 = {
+	name = "dynn_ivrea"
+	culture = "volhynian"
+	motto = dynn_ivrea_motto
+}
+680013 = {
+	name = "dynn_miao"
+	culture = "punjabi"
+	motto = dynn_miao_motto
+}
+680014 = {
+	name = "dynn_zhongji"
+	culture = "han"
+	motto = dynn_zhongji_motto
+}
+

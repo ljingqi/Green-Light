@@ -1,0 +1,121 @@
+﻿xianqi = {
+	interface_priority = 120
+	common_interaction = yes
+	category = interaction_category_diplomacy
+	use_diplomatic_range = yes
+    cooldown = { years = 2 }
+	
+	desc = xianqi_desc
+	
+	is_shown = {
+        scope:actor = {
+        is_male = yes
+		is_imprisoned = no
+        any_spouse = {neng_xia_diao_de_mei_ren_3 = yes is_imprisoned = no}
+        NOT = {scope:actor = scope:recipient}
+        }
+        scope:recipient = {
+		is_independent_ruler = yes
+        pu_tong_nan = yes
+        is_imprisoned = no
+        }
+    }
+	is_valid_showing_failures_only = {
+		scope:recipient = { is_diplomatically_available = yes }
+	}
+
+	ai_accept = {
+		base = 10
+		
+		
+		modifier = {
+			add = -50
+			scope:recipient = {
+			is_married = yes
+			}
+		}
+		
+		modifier = {
+			add = -50
+			scope:recipient = {has_trait = chaste}
+		}
+		
+		modifier = {
+			add = -20
+			scope:recipient = {has_trait = temperate}
+		}
+		
+		modifier = {
+			add = -20
+			scope:recipient = {has_trait = content}
+		}
+		
+		modifier = {
+			add = -20
+			scope:recipient = {has_trait = just}
+		}
+		
+		modifier = {
+		add = 100
+		scope:recipient = {has_trait = rakish} 
+		}
+		
+		modifier = {
+		add = -300
+		scope:actor = { any_spouse = {age > 40 is_immortal = no}}
+	    }
+		
+		modifier = {
+		add = 100
+		scope:actor = { any_spouse = {is_immortal = yes}}
+	    }
+		
+		modifier = {
+		add = 100
+		scope:actor = { any_spouse = {has_trait = beauty_good_3}}
+	    }
+		
+		modifier = {
+		add = 30
+		scope:actor = { any_spouse = {has_trait = beauty_good_2}}
+		}
+		
+		modifier = {
+		add = 10
+		scope:actor = { any_spouse = {has_trait = beauty_good_1}}
+		}
+		
+		modifier = {
+		add = 100
+		scope:recipient = {has_trait = lustful}
+		}
+		opinion_modifier = { 
+			who = scope:recipient
+			opinion_target = scope:actor
+			multiplier = 0.3
+			desc = AI_OPINION_REASON
+		}
+	}
+	
+	on_accept = {
+		scope:actor = {
+		add_stress = 20
+		trigger_event = longju_xianqi.0000
+		}
+    }
+	
+	ai_will_do = {
+		base = 0
+		
+		
+		modifier = {
+		add = 15
+		has_trait = deviant
+		}
+		
+		modifier = {
+		add = 15
+		has_trait = lustful
+		}
+	}
+}

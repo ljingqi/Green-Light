@@ -1,0 +1,155 @@
+﻿# 普通男性
+pu_tong_nan = {
+	is_alive = yes
+	is_male = yes
+	age > 7
+	NOT = {
+		has_trait = eunuch
+		has_trait = weak
+		has_trait = impotent
+		has_trait = physique_bad_3
+		has_trait = physique_bad_2
+		has_trait = physique_bad_1
+	}
+	OR = {
+		age < 51
+		is_immortal = yes
+		has_trait = mingqi_1
+		has_trait = physique_good_3
+	}
+}
+
+# 倾国倾城的适龄女性
+neng_xia_diao_de_mei_ren_3 = {
+	has_trait = beauty_good_3
+	is_alive = yes
+	is_female = yes
+	age > 13
+	OR = {age < 40 is_immortal = yes fertility > 0}
+	NOT = {has_trait = beauty_bad_3 has_trait = beauty_bad_2 has_trait = beauty_bad_1 has_trait = leper has_trait = spindly has_trait = dwarf has_trait = scaly has_trait = hunchbacked has_trait = giant}
+}
+
+
+# 美貌，名器，巫术能交媾
+mei3_wushi_mingqi = {
+	OR = {
+		AND = {
+			is_adult = yes
+			has_trait = beauty_good_3
+			has_trait = mingqi_1
+			has_trait = witch
+		}
+		AND = {
+			is_adult = yes
+			has_trait = beauty_good_3
+			has_trait = shenzhimihu
+			has_trait = witch
+		}
+		AND = {
+			is_adult = yes
+			has_trait = beauty_good_3
+			has_trait = mingqimixue
+			has_trait = witch
+		}
+		has_character_flag = nvshen_Aphrodite
+		has_character_flag = nvshen_Athena
+		has_character_flag = nvshen_Hera
+		has_character_flag = nvshen_carmilla
+		has_character_flag = nvshen_ishtar
+	}
+	NOT = {has_trait = eunuch}
+}
+
+
+# 淫妇
+xing_ying_zhe = {
+	OR = {
+		AND = {
+			has_trait = rakish
+			has_trait = lustful
+			has_trait = deviant
+		}
+	}
+	is_female = yes
+	is_adult = yes
+	fertility > 0
+}
+
+
+# 是病人
+shi_bing_ren = {
+	OR = {
+	has_trait = smallpox
+	has_trait = bubonic_plague
+	has_trait = typhus
+	has_trait = cancer
+	has_trait = consumption
+	has_trait = gout_ridden
+	has_trait = leper
+	has_trait = lovers_pox
+	has_trait = great_pox
+	has_trait = pneumonic
+	has_trait = wounded_1
+	has_trait = wounded_2
+	has_trait = wounded_3
+	has_trait = ill
+	}
+}
+
+# 是残疾
+shi_can_ji = {
+	OR = {
+	has_trait = one_legged
+	has_trait = maimed
+	has_trait = one_eyed
+	has_trait = disfigured
+	has_trait = infirm
+	has_trait = sickly
+	has_trait = scarred
+	has_trait = eunuch
+	has_trait = blind
+	}
+}
+
+
+# 干过我的妻子
+gan_guo_wo_de_qi_zi = {
+	NOT = {
+		has_trait = lvmaowugui
+		has_opinion_modifier = {target = $CHAR$ modifier = intrigue_mind_broken_opinion}
+		is_incapable = yes
+	}
+	OR = {
+		has_opinion_modifier = {target = $CHAR$ modifier = slept_with_spouse_exposed_opinion}
+		has_opinion_modifier = {target = $CHAR$ modifier = slept_with_spouse_discovered_opinion}
+		has_opinion_modifier = {target = $CHAR$ modifier = forced_spouse_concubine_marriage_opinion}
+	}
+}
+
+# 给我戴了绿帽
+gei_wo_dai_le_lv_mao = {
+	NOT = {
+		has_trait = lvmaowugui
+		has_opinion_modifier = {target = $CHAR$ modifier = intrigue_mind_broken_opinion}
+		is_incapable = yes
+	}
+	OR = {
+		has_opinion_modifier = {target = $CHAR$ modifier = unfaithful_spouse_exposed_opinion}
+		has_opinion_modifier = {target = $CHAR$ modifier = unfaithful_spouse_discovered_opinion}
+	}
+}
+
+# 有我不知道的外遇
+you_wo_bu_zhi_dao_de_wai_yu = {
+	any_courtier = {
+		OR = {
+			is_spouse_of = $CHAR$
+			is_concubine_of = $CHAR$
+		}
+		any_secret = {
+			secret_type = secret_lover
+			NOT = { is_known_by = $CHAR$ }
+			secret_target = {NOT = { this = $CHAR$ }}
+		}
+	}
+}
