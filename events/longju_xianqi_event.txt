@@ -87,11 +87,12 @@ longju_xianqi.0001 = {#普
 			add_hook = {target = scope:wodepengyou type = ganlewodelaopo_hook}
 		}
 		scope:wodepengyou = {
-		add_trait = lustful
+			add_trait = lustful
 		}
 		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {had_sex_with_effect = {CHARACTER = scope:wodeyinqi PREGNANCY_CHANCE = pregnancy_chance}}
+		scope:wodepengyou = {carn_rape_effect = {RAPIST = scope:wodepengyou VICTIM = scope:wodeyinqi TRIGGER_SEX_SCENE = NO}}
 	}
 	option = {
 		name = longju_xianqi.0001.a
@@ -115,18 +116,19 @@ longju_xianqi.0002 = {#淫
 	immediate = {
 	    root = {add_hook = {target = scope:wodepengyou type = ganlewodelaopo_hook}}
 	    scope:wodepengyou = {
-		add_trait = lustful
-		add_trait = trait_seducer
-		set_relation_lover = scope:wodeyinqi
-	}
+			add_trait = lustful
+			add_trait = trait_seducer
+			set_relation_lover = scope:wodeyinqi
+		}
 	    scope:wodeyinqi = {
-		add_trait = lustful
-		add_trait = trusting
-		set_relation_friend = scope:wodepengyou
-	}
+			add_trait = lustful
+			add_trait = trusting
+			set_relation_friend = scope:wodepengyou
+		}
 		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {had_sex_with_effect = {CHARACTER = scope:wodeyinqi PREGNANCY_CHANCE = pregnancy_chance}}
+		scope:wodepengyou = {carn_rape_effect = {RAPIST = scope:wodepengyou VICTIM = scope:wodeyinqi TRIGGER_SEX_SCENE = NO}}
 	}
 	option = {
 		name = longju_xianqi.0002.a
@@ -150,14 +152,15 @@ longju_xianqi.0003 = {#无能
 	immediate = {
 	    root = {add_hook = {target = scope:wodepengyou type = ganlewodelaopo_hook}}
 	    scope:wodepengyou = {
-		add_trait = lustful
-	}
+			add_trait = lustful
+		}
 	    scope:wodeyinqi = {
-		add_trait = intellect_bad_3
-	}
+			add_trait = intellect_bad_3
+		}
 		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {had_sex_with_effect = {CHARACTER = scope:wodeyinqi PREGNANCY_CHANCE = pregnancy_chance}}
+		scope:wodepengyou = {carn_rape_effect = {RAPIST = scope:wodepengyou VICTIM = scope:wodeyinqi TRIGGER_SEX_SCENE = NO}}
 	}
 	option = {#是否治愈无能
 		name = longju_xianqi.0003.a
@@ -184,6 +187,7 @@ longju_xianqi.0004 = {#给钱
 		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {had_sex_with_effect = {CHARACTER = scope:wodeyinqi PREGNANCY_CHANCE = pregnancy_chance}}
+		scope:wodepengyou = {carn_rape_effect = {RAPIST = scope:wodepengyou VICTIM = scope:wodeyinqi TRIGGER_SEX_SCENE = NO}}
 	}
 	option = {#结束
 		name = longju_xianqi.0004.a
@@ -209,16 +213,17 @@ longju_xianqi.0005 = {#囚禁！
 	immediate = {
 	    root = {set_relation_rival = scope:wodepengyou}
 	    scope:wodepengyou = {
-		add_trait = lustful
-		add_trait = trait_seducer
-		imprison = {target = scope:wodeyinqi}
+			add_trait = lustful
+			add_trait = trait_seducer
+			imprison = {target = scope:wodeyinqi}
 	    }
 	    scope:wodeyinqi = {
-		add_trait = lustful
+			add_trait = lustful
 	    }
 		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {had_sex_with_effect = {CHARACTER = scope:wodeyinqi PREGNANCY_CHANCE = pregnancy_chance}}
+		scope:wodepengyou = {carn_rape_effect = {RAPIST = scope:wodepengyou VICTIM = scope:wodeyinqi TRIGGER_SEX_SCENE = NO}}
 	}
 	option = {#结果
 		name = longju_xianqi.0005.a
@@ -369,18 +374,14 @@ longju_xianqi.0020 = {#不安慰，妻子变成肉便器
 		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {had_sex_with_effect = {CHARACTER = scope:wodeyinqi PREGNANCY_CHANCE = pregnancy_chance}}
-		#Carn_rape_effect = {
-			RAPIST = wodepengyou
-			VICTIM = wodeyinqi
-		}
 	}
 	option = {#厕所
 		name = longju_xianqi.0020.a
 		if = {
-				limit = {
-				    scope:wodeyinqi = { has_trait = beauty_good_3}
+			limit = {
+				scope:wodeyinqi = { has_trait = beauty_good_3}
 			}
-				trigger_event = {days = {30 60} id = longju_xianqi.0030}
+			trigger_event = {days = {30 60} id = longju_xianqi.0030}
 		}	
 	}
 }
@@ -940,7 +941,7 @@ longju_xianqi.0050 = {#不回来了
 	}
 	immediate = {
 	    root = {
-			divorce = scope:wodeyinqi
+			#divorce = scope:wodeyinqi
 		    set_relation_nemesis = scope:wodeyinqi
 		   }
 	    scope:wodeyinqi = { 
@@ -962,6 +963,7 @@ longju_xianqi.0050 = {#不回来了
 		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {had_sex_with_effect = {CHARACTER = scope:wodeyinqi PREGNANCY_CHANCE = pregnancy_chance}}
+		scope:wodepengyou = {carn_enslave_effect = {SLAVE = scope:wodeyinqi OWNER = scope:wodepengyou DRAMA = YES}}
 	}
 	option = {#结束
 		name = longju_xianqi.0050.a
