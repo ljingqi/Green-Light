@@ -27,7 +27,7 @@ longju_xianqi.0000 = {
 				target = scope:recipient
 				modifier = beitagandehenshuang_opinion
 				opinion = 60
-			} 
+			}
 			save_scope_as = wodeyinqi
 		}
 		scope:recipient = {
@@ -204,7 +204,7 @@ longju_xianqi.0004 = {#给钱
 	    scope:wodepengyou = {gold = -30}
 		scope:wodeyinqi = {
 			add_character_flag = {flag = is_naked days = 1}
-			add_trait = trait_prostitute
+			#add_trait = trait_prostitute_1
 		}
 		scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
 		hidden_effect = {
@@ -1045,13 +1045,13 @@ longju_xianqi.0050 = {#不回来了
 				target = scope:wodeyinqi
 				REASON = longju_nemesis_neverback
 			}
-		   }
+		}
 	    scope:wodeyinqi = { 
 		    change_diplomacy = 10
 			add_trait = trait_whole_of_body
 			set_relation_soulmate = scope:wodepengyou
 			carn_add_fetish_effect = {
-				being_raped
+				FETISH = being_raped
 			}
 		}
 		scope:wodepengyou = { 
@@ -1458,7 +1458,12 @@ longju_xianqi.0060 = {#仙岛被骗
 	}
 	lower_right_portrait = root
 	immediate = {
-		root = {set_relation_rival = scope:wodepengyou}
+		root = {
+			set_relation_rival = {
+				target = scope:wodepengyou
+				REASON = longju_rival_cheating
+			}
+		}
 	    scope:wodepengyou = {
 			imprison = {target = scope:wodeyinqi type = dungeon}
 			imprison = {target = root type = dungeon}
