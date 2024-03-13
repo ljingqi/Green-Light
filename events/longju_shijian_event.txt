@@ -186,17 +186,17 @@ longju_shijian.0104 = {#夜晚
 				modifier = rangwogandehenshuang_opinion
 				opinion = 100
 			}
-		change_intrigue = 3
-		add_trait = trait_schemer
+			change_intrigue = 3
+			add_trait = trait_schemer
 		}
 	    scope:wodeyinqi = {
-		add_opinion = {
+			add_opinion = {
 				target = scope:heishushu
 				modifier = beitagandehenshuang_opinion
 				opinion = 60
 			} 
-		add_stress = 20
-	}
+			add_stress = 20
+		}
 		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
 		scope:heishushu = {add_character_flag = {flag = is_naked days = 1}}
 		scope:heishushu = {had_sex_with_effect = {CHARACTER = scope:wodeyinqi PREGNANCY_CHANCE = pregnancy_chance}}
@@ -528,13 +528,13 @@ longju_shijian.0113 = {#不去，后续
 	    scope:wodeyinqi = { 
 			change_diplomacy = 2
 			change_intrigue = 4
-		   }
+		}
 		scope:heishushu = { 
 			add_prestige = 200
 			change_powess = 20
 			change_intrigue = 8
 			add_trait = education_intrigue_4
-		   }
+		}
 		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
 		scope:heishushu = {add_character_flag = {flag = is_naked days = 1}}
 		scope:heishushu = {had_sex_with_effect = {CHARACTER = scope:wodeyinqi PREGNANCY_CHANCE = pregnancy_chance}}
@@ -565,13 +565,13 @@ longju_shijian.0114 = {#不去，结果
 			add_stress = -100
 			add_trait = rakish
 			set_relation_soulmate = scope:heishushu
-		   }
+		}
 		scope:heishushu = { 
 			add_trait = mystic_3
 			add_trait = rakish
 			add_trait = trait_seducer
 			add_trait = hunter_3
-		   }
+		}
 		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
 		scope:heishushu = {add_character_flag = {flag = is_naked days = 1}}
 		scope:heishushu = {had_sex_with_effect = {CHARACTER = scope:wodeyinqi PREGNANCY_CHANCE = pregnancy_chance}}
@@ -607,12 +607,12 @@ longju_shijian.0120 = {#去，中途，判定
 	    scope:wodeyinqi = { 
 			change_diplomacy = 2
 			change_intrigue = 4
-		   }
+		}
 		scope:heishushu = { 
 			add_prestige = 200
 			change_intrigue = 8
 			add_trait = education_intrigue_4
-		   }
+		}
 		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
 		scope:heishushu = {add_character_flag = {flag = is_naked days = 1}}
 		scope:heishushu = {had_sex_with_effect = {CHARACTER = scope:wodeyinqi PREGNANCY_CHANCE = pregnancy_chance}}
@@ -636,7 +636,7 @@ longju_shijian.0120 = {#去，中途，判定
 		    }
 		    else = {
 		        scope:heishushu = { 
-		        death = { death_reason = death_duel killer = scope:heishushu}
+					death = { death_reason = death_duel killer = scope:heishushu}
 		        }
 		    }
 		}
@@ -703,15 +703,15 @@ longju_shijian.0123 = {#看，结果
 			set_relation_soulmate = scope:heishushu
 		   }
 		scope:heishushu = { 
-			add_trait = mystic_3
-			add_trait = rakish
-			add_trait = trait_seducer
-			add_trait = hunter_3
-			add_opinion = {
-				target = root
-				modifier = nilaopozhenbang_opinion
-				opinion = 40
-			    }
+				add_trait = mystic_3
+				add_trait = rakish
+				add_trait = trait_seducer
+				add_trait = hunter_3
+				add_opinion = {
+					target = root
+					modifier = nilaopozhenbang_opinion
+					opinion = 40
+				}
 		    }
 		root = {
 		    add_character_modifier = {modifier = hei_shu_shu_de_hao_huo_ban  years = 20}
