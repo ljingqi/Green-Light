@@ -31,3 +31,5 @@
  longju_nemesis_neverback_corresponding:0 "[CHARACTER.GetShortUIName|U]发誓和[TARGET_CHARACTER.GetShortUIName]彻底断绝关系，这让[TARGET_CHARACTER.GetShortUIName]怒火中烧。"
  longju_nemesis_cheat:0 "[CHARACTER.GetShortUIName|U]在主人面前宣布和[TARGET_CHARACTER.GetShortUIName]斩断一切联系，与[TARGET_CHARACTER.GetSheHe]不共戴天。"
  longju_nemesis_cheat_corresponding:0 "[TARGET_CHARACTER.GetShortUIName]在主人面前宣布和[CHARACTER.GetShortUIName|U]斩断一切联系，与[CHARACTER.GetSheHe]不共戴天。"
+ longju_soulmate_inversion:0 "[CHARACTER.GetShortUIName|U]理所应当地抛弃了弱者，转而效忠于[TARGET_CHARACTER.GetShortUIName]，无论他们的地位相差如何。"
+ longju_soulmate_inversion_corresponding:0 "[TARGET_CHARACTER.GetShortUIName]理所应当地抛弃了弱者，转而效忠于[CHARACTER.GetShortUIName|U]，无论他们的地位相差如何。"
