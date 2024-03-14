@@ -613,14 +613,14 @@ longju_xianqi.0031 = {#去看看
 		    if = {
 			    limit = {OR = {is_immortal = yes prowess > scope:wodepengyou.prowess}}
 			    imprison = {target = scope:wodepengyou type = dungeon}
-		}
+			}
 		    else = {
 		        scope:wodepengyou = { 
-		        imprison = {target = root type = dungeon}
-		   }
-		trigger_event = longju_xianqi.0035
+		        	imprison = {target = root type = dungeon}
+				}
+				trigger_event = longju_xianqi.0035
+			}
 		}
-	}
 	}
 }
 

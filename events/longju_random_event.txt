@@ -8,26 +8,27 @@ namespace = longju_random
 #0 - 10000
 ##########
 
+#
 longju_random.0001 = {
 	type = character_event
 	title = longju_random.0001.t
 	desc = longju_random.0001.desc
-	theme = realm
+	theme = hunting
 	override_background = {
 		event_background = terrain
 	}
 	right_portrait = {
 		character = scope:wife
-		animation = shock
+		animation = love
 	}
 	left_portrait = {
 		character = Root
-		
+		animation = laugh
 	}
 	immediate = {
 		create_character = {
 			gender = male
-			save_scope_as = peasent
+			save_scope_as = peasant
 			age = 35
 			location = root.location
 			dynasty = none
@@ -41,9 +42,6 @@ longju_random.0001 = {
 			trait = peasant_leader
 			sexuality = heterosexual
 		}
-		location = {
-			save_scope_as = somewhere
-		}
 		primary_spouse = {
 			save_scope_as = wife
 		}
@@ -53,25 +51,29 @@ longju_random.0001 = {
 		trigger_event = { days = {15 30} id = longju_random.0002}
 	}
 }
+
 longju_random.0002 = {
 	type = character_event
 	title = longju_random.0002.t
 	desc = longju_random.0002.desc
 	left_portrait = {
-		character = scope:peasent
+		character = scope:peasant
 		animation = aggressive_spear
 	}
 	right_portrait = {
 		character = scope:wife
 		animation = shock
 	}
+	lower_right_portrait = {
+		character = root
+	}
 	immediate = {
 		hidden_effect = {
-			scope:peasent = {
-				carn_rape_effect = {RAPIST = scope:peasent VICTIM = scope:wife TRIGGER_SEX_SCENE = NO}
+			scope:peasant = {
+				carn_rape_effect = {RAPIST = scope:peasant VICTIM = scope:wife TRIGGER_SEX_SCENE = NO}
 				carn_had_sex_with_effect_v2 = {
 					CHARACTER_1 = scope:wife
-					CHARACTER_2 = scope:peasent
+					CHARACTER_2 = scope:peasant
 					C1_PREGNANCY_CHANCE = pregnancy_chance
 					C2_PREGNANCY_CHANCE = pregnancy_chance
 					STRESS_EFFECTS = scope:carn_sex_stress_effects
@@ -82,5 +84,63 @@ longju_random.0002 = {
 	}
 	option = {
 		name = longju_random.0002.a
+		
+	}
+	option = {#battle of you and peasant
+		name = longju_random.0002.b
+		hidden_effect = {
+			if = {
+				limit = {OR = {is_immortal = YES prowess > scope:peasant.prowess}}
+				scope:peasant = {
+					death = {
+						death_reason = death_battle
+						killer = root
+					}
+				}
+			}
+			else = {
+				root = {
+					death = {
+						death_reason = death_battle
+						killer = scope:peasant
+					}
+				}
+				scope:wife = {
+					divorce = root
+					set_relation_soulmate = {
+						Target = scope:peasant
+						reason = longju_soulmate_inversion
+						opinion = 50
+					}
+				}
+				scope:peasant = {
+					marry = scope:wife
+					#claim = root:title
+				}
+			}
+		}
+	}
+}
+
+longju_random.0003 = {
+	type = character_event
+	title = longju_random.0003.t
+	desc = longju_random.0003.desc
+	theme = realm
+	option = {
+		name = longju_random.0003.a
+	}
+	option = {
+		name = longju_random.0003.b
+	}
+}
+
+longju_random.0004 = {
+	type = character_event
+	title = longju_random.0004.t
+	desc = longju_random.0004.desc
+	theme = realm
+	option = {
+		name = longju.random.0004.a
 	}
 }
