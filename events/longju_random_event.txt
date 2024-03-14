@@ -56,6 +56,7 @@ longju_random.0002 = {
 	type = character_event
 	title = longju_random.0002.t
 	desc = longju_random.0002.desc
+	theme = hunting
 	left_portrait = {
 		character = scope:peasant
 		animation = aggressive_spear
@@ -84,7 +85,18 @@ longju_random.0002 = {
 	}
 	option = {
 		name = longju_random.0002.a
-		
+		add_courtier = scope:peasant
+		root = {designate_diarch = scope:peasant}
+		scope:peasant = {
+			add_hook = {
+				type = saved_my_life_hook
+				target = root
+			}
+		}
+		#start_diarch
+		stress_impact = {
+			Brave = medium_stress_gain
+		}
 	}
 	option = {#battle of you and peasant
 		name = longju_random.0002.b
