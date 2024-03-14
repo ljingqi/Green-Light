@@ -1016,7 +1016,21 @@ longju_shijian.0303 = {#孩子的视角 4
 }
 
 longju_shijian.0310 = {#捡到可爱的孩子
-	trigger = { is_ai = no any_child = {age < 11 is_male = yes} any_spouse = {is_imprisoned = no neng_xia_diao_de_mei_ren_3 = yes  exists = yes OR = {has_trait = lustful has_trait = rakish}}}
+	trigger = { 
+		is_ai = no 
+		any_child = {
+			age < 11 is_male = yes
+		} 
+		any_spouse = {
+			is_imprisoned = no 
+			neng_xia_diao_de_mei_ren_3 = yes  
+			exists = yes 
+			OR = {
+				has_trait = lustful 
+				has_trait = rakish
+			}
+		}
+	}
 	type = character_event
 	title = longju_shijian.0310.t
 	desc = longju_shijian.0310.desc
@@ -1034,30 +1048,30 @@ longju_shijian.0310 = {#捡到可爱的孩子
 	
 	immediate = {
 		hidden_effect = {
-		random_spouse = { limit = { neng_xia_diao_de_mei_ren_3 = yes } save_scope_as = wodeyinqi}
-		create_character = {
-			age = 12
-			martial = 8
-	        diplomacy = 5
-	        intrigue = 15
-	        stewardship = 3
-	        learning = 2
-	        prowess = 5
-			random_traits = no
-			trait = rakish
-			trait = lustful
-			trait = ambitious
-			trait = sadistic
-			trait = pure_blooded
-			trait = fecund
-			trait = beauty_good_3
-			trait = physique_good_3
-			trait = intellect_good_3
-			trait = rumayibandejugen
-			gender_female_chance = 0
-			faith = this.faith
-			culture = this.Ethiopian
-			save_scope_as = wodeyangzi
+			random_spouse = { limit = { neng_xia_diao_de_mei_ren_3 = yes } save_scope_as = wodeyinqi}
+			create_character = {
+				age = 12
+				martial = 8
+				diplomacy = 5
+				intrigue = 15
+				stewardship = 3
+				learning = 2
+				prowess = 5
+				random_traits = no
+				trait = rakish
+				trait = lustful
+				trait = ambitious
+				trait = sadistic
+				trait = pure_blooded
+				trait = fecund
+				trait = beauty_good_3
+				trait = physique_good_3
+				trait = intellect_good_3
+				trait = rumayibandejugen
+				gender_female_chance = 0
+				faith = this.faith
+				culture = this.Ethiopian
+				save_scope_as = wodeyangzi
 		    }
 		}
 	}

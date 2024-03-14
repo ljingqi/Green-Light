@@ -22,7 +22,7 @@ longju_xianqi.0000 = {
 		animation = love
 	}
 	immediate = {
-		random_spouse = {
+		primary_spouse = {
 			add_opinion = {
 				target = scope:recipient
 				modifier = beitagandehenshuang_opinion
@@ -514,17 +514,17 @@ longju_xianqi.0014 = {#癖好的初次尝试
 	immediate = {
 	    root = {
 			add_trait = rakish
-			add_character_modifier = {modifier = gong_xian_qi_zi  years = 50}
+			add_character_modifier = {modifier = gong_xian_qi_zi  years = 5}
 		}
 	    scope:wodeyinqi = { 
 			add_trait = hunter_2
 			add_trait = rakish
-			add_character_modifier = {modifier = lv_nu_jiao_qi  years = 50}
+			add_character_modifier = {modifier = lv_nu_jiao_qi  years = 5}
 		   }
 		scope:wodepengyou = { 
 			add_trait = hunter_2
 			add_trait = rakish
-			add_character_modifier = {modifier = huang_mao_te_quan  years = 50}
+			add_character_modifier = {modifier = huang_mao_te_quan  years = 5}
 		   }
 		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
