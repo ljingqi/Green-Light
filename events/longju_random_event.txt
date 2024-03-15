@@ -134,6 +134,35 @@ longju_random.0002 = {
 	}
 }
 
+longju_random.0101 = {
+	type = character_event
+	title = longju_random.0101.t
+	desc = longju_random.0101.desc
+	theme = hunting
+	left_portrait = {
+		character = root
+		animation = 
+	}
+	right_portrait = {
+		character = scope:peasant
+		animation = 
+	}
+	immediate = {
+		scope:wife = {
+			add_oppnion = {
+				target = root
+				opinon = protect_me
+			}
+		}
+	}
+	option = {
+		name = longju_random.0101.a
+		scope:peasant = {
+			death = death_in_battle
+			killer = root
+		}
+	}
+}
 longju_random.0003 = {
 	type = character_event
 	title = longju_random.0003.t
