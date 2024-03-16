@@ -25,11 +25,25 @@ longju_random.0001 = {
 		character = Root
 		animation = laugh
 	}
+	trigger = {
+		is_ruler = yes
+		is_male = YES
+		is_incapable = NO
+		is_imprisoned = NO
+		is_adult = yes
+		is_at_home = YES
+		primary_spouse  = {
+			is_female = yes
+			has_trait = beauty_good
+		}
+	}
+	cooldown = { years = 50}
 	immediate = {
 		create_character = {
 			gender = male
 			save_scope_as = peasant
-			age = 35
+			age = { 28 38 }
+			prowess = { 8 20 }
 			location = root.location
 			dynasty = none
 			faith = location.faith
@@ -40,6 +54,7 @@ longju_random.0001 = {
 				max_template_decent_skill
 			}
 			trait = peasant_leader
+			random_traits = beauty_bad
 			sexuality = heterosexual
 		}
 		primary_spouse = {
@@ -83,7 +98,7 @@ longju_random.0002 = {
 			}
 		}
 	}
-	option = {
+	option = {#regency
 		name = longju_random.0002.a
 		add_courtier = scope:peasant
 		root = {designate_diarch = scope:peasant}
@@ -96,72 +111,133 @@ longju_random.0002 = {
 		#start_diarch
 		stress_impact = {
 			Brave = medium_stress_gain
+			vengeful = major_stress_gain
+			ambitious = major_stress_gain
 		}
+		trigger_event = {months = {3 6} id = longju_random.0003}
 	}
-	option = {#battle of you and peasant
+	option = { #battle of you and peasant
 		name = longju_random.0002.b
 		hidden_effect = {
 			if = {
-				limit = {OR = {is_immortal = YES prowess > scope:peasant.prowess}}
-				scope:peasant = {
-					death = {
-						death_reason = death_battle
-						killer = root
-					}
-				}
+				limit = {OR = {is_immortal = YES prowess >  scope:peasant.prowess}}
+				trigger_event = longju_random.0101
 			}
 			else = {
-				root = {
-					death = {
-						death_reason = death_battle
-						killer = scope:peasant
-					}
-				}
-				scope:wife = {
-					divorce = root
-					set_relation_soulmate = {
-						Target = scope:peasant
-						reason = longju_soulmate_inversion
-						opinion = 50
-					}
-				}
-				scope:peasant = {
-					marry = scope:wife
-					#claim = root:title
-				}
+				trigger_event = longju_random.0102
 			}
+		}
+		stress_impact = {
+			craven = major_stress_gain
+			content = medium_stress_gain
+		}
+	}
+	option = {#give monye
+		name = longju_random.0002.c
+		root ={
+			pay_short_term_income = {
+				target = scope:peasant
+				years = {5 10}
+			}
+		}
+		stress_impact = {
+			greedy = medium_stress_gain
+			vengeful = major_stress_gain
 		}
 	}
 }
 
-longju_random.0101 = {
+longju_random.0101 = { #win
 	type = character_event
 	title = longju_random.0101.t
 	desc = longju_random.0101.desc
 	theme = hunting
 	left_portrait = {
 		character = root
-		animation = 
+		animation = celebrate_dagger
 	}
 	right_portrait = {
 		character = scope:peasant
-		animation = 
+		animation = fear
 	}
 	immediate = {
 		scope:wife = {
-			add_oppnion = {
+			add_opinion = {
 				target = root
-				opinon = protect_me
+				modifier = protect_me
+				opinion = 50
 			}
 		}
 	}
-	option = {
+	option = {#kill him
 		name = longju_random.0101.a
 		scope:peasant = {
-			death = death_in_battle
-			killer = root
+			death = {
+				death_reason = death_battle
+				killer = root
+			}
+		}
+		stress_impact = {
+			humble = medium_stress_gain
+			forgiving = medium_stress_gain
+			compassionate = major_stress_gain
+			callous = minor_stress_loss
+			sadistic = minor_stress_loss
 		}
 	}
+	option = {#save his life
+		name = longju_random.0101.b
+		add_courtier = scope:peasant
+		scope:peasant = {
+			add_hook = {
+				type = obligation_hook
+				target = root
+			}
+		}
+		stress_impact = {
+			vengeful = massive_stress_gain
+			forgiving = minor_stress_loss
+		}
+	}
+}
+
+longju_random.0102 = {#lost
+	type = character_event
+	title = longju_random.0102.t
+	desc = longju_random.0102.desc
+	theme = hunting
+	left_portrait = {
+		character = scope:peasant
+		animation = war_over_win
+	}
+	right_portrait = {
+		character = root
+		animation = severelywounded
+	}
+	option = {
+		name = longju_random.0102.a
+		root = {
+			death = {
+				death_reason = death_battle
+				killer = scope:peasant
+			}
+		}
+		scope:wife = {
+			divorce = root
+			set_relation_soulmate = {
+				Target = scope:peasant
+				reason = longju_soulmate_inversion
+				opinion = 50
+			}
+		}
+		add_courtier = scope:peasant
+		bodyguard_title_accepted_effect = scope:peasant
+		scope:peasant = {
+			marry = scope:wife
+			#add_pressed_claim = { target = root}
+		}
+	}
+
 }
 longju_random.0003 = {
 	type = character_event

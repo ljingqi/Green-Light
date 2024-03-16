@@ -64,7 +64,10 @@ longju_xianqi.0000 = {
 						trigger_event = longju_xianqi.0005
 				}
 			}
-		}	
+		}
+		stress_impact = {
+			chaste = minor_stress_gain
+		}
 	}
 }
 
@@ -77,10 +80,26 @@ longju_xianqi.0001 = {#普
 	left_portrait = {
 		character = scope:wodeyinqi
 		animation = shame
+		triggered_outfit = {
+			trigger = {
+				exists = scope:wodepengyou
+			}
+			outfit_tags = {
+				no_clothes
+			}
+		}
 	}
 	right_portrait = {
 		character = scope:wodepengyou
 		animation = ecstasy
+		triggered_outfit = {
+			trigger = {
+				exists = scope:wodepengyou
+			}
+			outfit_tags = {
+				no_clothes
+			}
+		}
 	}
 	immediate = {
 		root = {
@@ -89,8 +108,8 @@ longju_xianqi.0001 = {#普
 		scope:wodepengyou = {
 			add_trait = lustful
 		}
-		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
-		scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
+		#scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
+		#scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
 		hidden_effect = {
 			scope:wodepengyou = {
 				had_sex_with_effect = { CHARACTER = scope:wodeyinqi PREGNANCY_CHANCE = pregnancy_chance}
@@ -112,10 +131,26 @@ longju_xianqi.0002 = {#淫
 	left_portrait = {
 		character = scope:wodeyinqi
 		animation = love
+		triggered_outfit = {
+			trigger = {
+				exists = scope:wodepengyou
+			}
+			outfit_tags = {
+				no_clothes
+			}
+		}
 	}
 	right_portrait = {
 		character = scope:wodepengyou
 		animation = ecstasy
+		triggered_outfit = {
+			trigger = {
+				exists = scope:wodepengyou
+			}
+			outfit_tags = {
+				no_clothes
+			}
+		}
 	}
 	immediate = {
 	    root = {add_hook = {target = scope:wodepengyou type = ganlewodelaopo_hook}}
@@ -135,8 +170,8 @@ longju_xianqi.0002 = {#淫
 				reason = longju_friend_conquer
 			}
 		}
-		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
-		scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
+		#scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
+		#scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
 		hidden_effect = {
 			scope:wodepengyou = {
 				had_sex_with_effect = { CHARACTER = scope:wodeyinqi PREGNANCY_CHANCE = pregnancy_chance}
@@ -200,8 +235,12 @@ longju_xianqi.0004 = {#给钱
 		animation = ecstasy
 	}
 	immediate = {
-	    root = {gold = 30}
-	    scope:wodepengyou = {gold = -30}
+	    scope:wodepengyou = {
+			pay_short_term_gold = {
+				target = root
+				gold = {30 50}
+			}
+		}
 		scope:wodeyinqi = {
 			add_character_flag = {flag = is_naked days = 1}
 			#add_trait = trait_prostitute_1
@@ -239,8 +278,11 @@ longju_xianqi.0005 = {#囚禁！
 	    root = {set_relation_rival = scope:wodepengyou}
 	    scope:wodepengyou = {
 			add_trait = lustful
-			add_trait = trait_seducer
-			imprison = {target = scope:wodeyinqi}
+			add_trait = seducer
+			imprison = {
+				target = scope:wodeyinqi
+				type = legend_sneaks_food
+			}
 	    }
 	    scope:wodeyinqi = {
 			add_trait = lustful
@@ -349,6 +391,10 @@ longju_xianqi.0011 = {#共享盛宴，开启新线路
 	option = {#只有你们才知道的秘密
 		name = longju_xianqi.0011.a
 		trigger_event = {days = 1 id = longju_xianqi.0012}
+		stress_impact = {
+			chaste = minor_stress_gain
+			shy = medium_stress_gain
+		}
 	}
 	option = {#判定是否开启仙岛
 		name = longju_xianqi.0011.b
@@ -552,6 +598,9 @@ longju_xianqi.0030 = {#奇怪的妻子
 	option = {#偷偷过去看看
 		name = longju_xianqi.0030.a
 		trigger_event = {days = 1 id = longju_xianqi.0031}
+		stress_impact = {
+			trusting = medium_stress_gain
+		}
 	}
 	option = {#我相信她
 		name = longju_xianqi.0030.b
@@ -563,6 +612,9 @@ longju_xianqi.0030 = {#奇怪的妻子
 			add_trait = hunter_3
 			add_trait = lustful
 		   }
+		stress_impact = {
+			paranoid = medium_stress_gain
+		}
 		hidden_effect = {
 			scope:wodepengyou = {
 				had_sex_with_effect = { CHARACTER = scope:wodeyinqi PREGNANCY_CHANCE = pregnancy_chance}
@@ -589,14 +641,17 @@ longju_xianqi.0031 = {#去看看
 	immediate = {
 	    root = {
 		    add_prestige = -200
+			pay_short_term_gold = {
+				target = scope:wodepengyou
+				gold = {50 100}
+			}
 		}
 	    scope:wodeyinqi = { 
-			change_intrigue = 2
+			intrigue = 2
 		   }
 		scope:wodepengyou = { 
-		    add_cash = 30 
 			add_prestige = 200
-			change_powess = 20
+			powess = 20
 			add_trait = lustful
 		   }
 		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
@@ -606,6 +661,11 @@ longju_xianqi.0031 = {#去看看
 	option = {#羞愧地离开
 		name = longju_xianqi.0031.a
 		trigger_event = {days = {60 90} id = longju_xianqi.0032}
+		stress_impact = {
+			vengeful = medium_stress_gain
+			wrathful = major_stress_gain
+			ambitious = medium_stress_gain
+		}
 	}
 	option = {#杀了这对奸夫淫妇
 		name = longju_xianqi.0031.b
@@ -620,6 +680,11 @@ longju_xianqi.0031 = {#去看看
 				}
 				trigger_event = longju_xianqi.0035
 			}
+		}
+		stress_impact = {
+			craven = massive_stress_gain
+			trusting = medium_stress_gain
+			compassionate = massive_stress_gain
 		}
 	}
 }
@@ -678,10 +743,26 @@ longju_xianqi.0035 = {#不敌落败
 	left_portrait = {
 		character = scope:wodepengyou
 		animation = ecstasy
+		triggered_outfit = {
+			trigger = {
+				exists = scope:wodepengyou
+			}
+			outfit_tags = {
+				no_clothes
+			}
+		}
 	}
 	right_portrait = {
 		character = scope:wodeyinqi
 		animation = love
+		triggered_outfit = {
+			trigger = {
+				exists = scope:wodepengyou
+			}
+			outfit_tags = {
+				no_clothes
+			}
+		}
 	}
 	lower_right_portrait = root
 	immediate = {
@@ -718,13 +799,13 @@ longju_xianqi.0035 = {#不敌落败
 					modifier = woderoubianqi_opinion
 					opinion = 80
 				}
-			add_trait = hunter_3
+			add_trait = hunter_1
 			add_trait = rakish
 			add_trait = callous
 			add_trait = sadistic
 		   }
-		scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
-		scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
+		#scope:wodeyinqi = {add_character_flag = {flag = is_naked days = 1}}
+		#scope:wodepengyou = {add_character_flag = {flag = is_naked days = 1}}
 		scope:wodepengyou = {had_sex_with_effect = {CHARACTER = scope:wodeyinqi PREGNANCY_CHANCE = pregnancy_chance}}
 	}
 	option = {
@@ -754,9 +835,18 @@ longju_xianqi.0040 = {#治愈与否
 			add_trait = beibangjia
 		   }
 		trigger_event = {days = {5 10} id = longju_xianqi.0041}
+		stress_impact = {
+			chaste = medium_stress_gain
+			impatient = major_stress_gain
+			paranoid = medium_stress_gain
+		}
 	}
 	option = {#不治
 		name = longju_xianqi.0040.b
+		stress_impact = {
+			brave = minor_stress_gain
+			trusting = medium_stress_gain
+		}
 	}
 }
 
@@ -787,6 +877,9 @@ longju_xianqi.0041 = {#第一封信
 	option = {#信不能停
 		name = longju_xianqi.0041.a
 		trigger_event = {days = {5 10} id = longju_xianqi.0042}
+		stress_impact = {
+			impatient = major_stress_gain
+		}
 	}
 	option = {#不看了，治好了还我
 		name = longju_xianqi.0041.b
@@ -805,6 +898,9 @@ longju_xianqi.0041 = {#第一封信
 				Target = scope:wodepengyou
 				REASON = longju_soulmate_cure
 			}
+		   }
+		   stress_impact = {
+			lustful = medium_stress_gain
 		   }
 		trigger_event = {days = {30 60} id = longju_xianqi.0045}
 	}
@@ -837,6 +933,10 @@ longju_xianqi.0042 = {#第二封信
 	option = {#信不能停
 		name = longju_xianqi.0042.a
 		trigger_event = {days = {5 10} id = longju_xianqi.0043}
+		stress_impact = {
+			impatient = medium_stress_gain
+			wrathful = medium_stress_gain
+		}
 	}
 	option = {#不看了，治好了还我
 		name = longju_xianqi.0042.b
@@ -855,7 +955,11 @@ longju_xianqi.0042 = {#第二封信
 				Target = scope:wodepengyou
 				REASON = longju_soulmate_cure
 			}
-		   }
+			stress_impact = {
+				patient = medium_stress_gain
+				lustful = major_stress_gain
+			}
+		}
 		trigger_event = {days = {25 40} id = longju_xianqi.0045}
 	}
 }
@@ -1405,9 +1509,8 @@ longju_xianqi.0058 = {#死
 	}
 	option = {#结果
 		name = longju_xianqi.0058.a
-		scope:wodeyinqi = {death = { death_reason = death_wannongzhisi }}
+		scope:wodeyinqi = {death = { death_reason = death_punishment  target = scope:wodepengyou}}
 	}
-}
 
 longju_xianqi.0059 = {#怀孕
 	type = character_event
@@ -1702,4 +1805,3 @@ longju_xianqi.0065 = {#妻子堕落
 		name = longju_xianqi.0065.a
 	}
 }
-
