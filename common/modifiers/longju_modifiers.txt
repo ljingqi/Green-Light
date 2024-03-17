@@ -91,3 +91,4 @@ de_dao_qi_guai_de_xiang_lian = {
 	general_opinion = 10
     prowess = 3
 }
+
