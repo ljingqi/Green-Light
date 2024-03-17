@@ -1,4 +1,0 @@
- strong_garant_hook = {
-    STRONG = YES
-    expiration_years = 10
- }
