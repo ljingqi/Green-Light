@@ -116,3 +116,8 @@ beiwanhuaile_opinion = {
 	years = 100
 	decaying = no
 }
+protectedme_opinion = {
+	opinion = 100
+	years = 2
+	decaying = YES
+}
