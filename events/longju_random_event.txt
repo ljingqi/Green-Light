@@ -49,13 +49,11 @@ longju_random.0001 = {
 			faith = location.faith
 			culture = location.culture
 			random_traits = YES
-			martial = {
-				min_template_decent_skill
-				max_template_decent_skill
-			}
+			martial = {10 25 }
 			trait = peasant_leader
-			random_traits = beauty_bad
+			random_traits = yes
 			sexuality = heterosexual
+			
 		}
 		primary_spouse = {
 			save_scope_as = wife
@@ -75,10 +73,26 @@ longju_random.0002 = {
 	left_portrait = {
 		character = scope:peasant
 		animation = aggressive_spear
+		triggered_outfit = {
+			trigger = {
+				exists = scope:peasant
+			}
+			outfit_tags = {
+				no_clothes
+			}
+		}
 	}
 	right_portrait = {
 		character = scope:wife
 		animation = shock
+		triggered_outfit = {
+			trigger = {
+				exists = scope:peasant
+			}
+			outfit_tags = {
+				no_clothes
+			}
+		}
 	}
 	lower_right_portrait = {
 		character = root
@@ -96,6 +110,9 @@ longju_random.0002 = {
 					DRAMA = scope:carn_sex_drama
 				}
 			}
+			scope:wife = {
+				add_trait = wounded_1
+			}
 		}
 	}
 	option = {#regency
@@ -108,11 +125,42 @@ longju_random.0002 = {
 				target = root
 			}
 		}
+		scope:wife = {
+			progress_towards_lover_effect = {
+				TARGET = scope:peasant
+				REASON = longju_lover_surrender
+				OPINION = 100
+				PROVINCE = $LOCATION$
+			}
+			progress_towards_rival_effect = {
+				TARGET = root
+				REASON = longju_rival_cuck
+				OPINION = -70
+			}
+		}
 		#start_diarch
 		stress_impact = {
 			Brave = medium_stress_gain
 			vengeful = major_stress_gain
 			ambitious = major_stress_gain
+		}
+		ai_chance = {
+			value = 30
+			modifier = {
+				OR = {
+					has_trait = craven
+					has_trait = eunuch
+				}
+				add = 100
+			}
+			modifier = {
+				limit = {
+					root = {
+					has_trait = compassionate
+					}	
+				}
+				add = 50
+			}
 		}
 		trigger_event = {months = {3 6} id = longju_random.0003}
 	}
@@ -131,6 +179,27 @@ longju_random.0002 = {
 			craven = major_stress_gain
 			content = medium_stress_gain
 		}
+		ai_chance = {
+			value = 20
+			modifier = {
+				limit = {
+					root = {
+						has_relation_lover = {
+							target = scope:wife
+						}
+					}
+				}
+				add = 200
+			}
+			modifier = {
+				OR = {
+					has_trait = wrathful
+					has_trait = Brave
+					has_trait = vengeful
+				}
+				add = 100
+			}
+		}
 	}
 	option = {#give monye
 		name = longju_random.0002.c
@@ -144,9 +213,26 @@ longju_random.0002 = {
 			greedy = medium_stress_gain
 			vengeful = major_stress_gain
 		}
+		ai_chance = {
+			value = 50
+			modifier = {
+				if = {
+					has_trait = greedy
+				}
+				desc = "so expensive"
+				add = -100
+			}
+			modifier = {
+				if = {
+					root.gold < 500
+				}
+				desc = "I'm poor"
+				add = -50
+			}
+		}
 	}
 }
-
+	
 longju_random.0101 = { #win
 	type = character_event
 	title = longju_random.0101.t
@@ -164,8 +250,32 @@ longju_random.0101 = { #win
 		scope:wife = {
 			add_opinion = {
 				target = root
-				modifier = protect_me
+				modifier = protectedme_opinion
 				opinion = 50
+			}
+		}
+	}
+	option = { #save his life
+		name = longju_random.0101.b
+		add_courtier = scope:peasant
+		root = {
+			add_hook = {
+				type = saved_my_life_hook
+				target = scope:peasant
+			}
+		}
+		stress_impact = {
+			vengeful = massive_stress_gain
+			forgiving = minor_stress_loss
+		}
+		ai_chance = {
+			value = 30
+			modifier = {
+				OR = {
+					has_trait = forgiving
+					has_trait = humble
+				}
+				add = 30
 			}
 		}
 	}
@@ -184,21 +294,18 @@ longju_random.0101 = { #win
 			callous = minor_stress_loss
 			sadistic = minor_stress_loss
 		}
-	}
-	option = {#save his life
-		name = longju_random.0101.b
-		add_courtier = scope:peasant
-		scope:peasant = {
-			add_hook = {
-				type = obligation_hook
-				target = root
+		ai_chance = {
+			value = 50
+			modifier = {
+				OR = {
+					has_trait = vengeful
+					has_trait = brave 
+				}
+				add = 20
 			}
 		}
-		stress_impact = {
-			vengeful = massive_stress_gain
-			forgiving = minor_stress_loss
-		}
 	}
+
 }
 
 longju_random.0102 = {#lost
@@ -227,11 +334,11 @@ longju_random.0102 = {#lost
 			set_relation_soulmate = {
 				Target = scope:peasant
 				reason = longju_soulmate_inversion
+				province = $LOCATION$
 				opinion = 50
 			}
 		}
 		add_courtier = scope:peasant
-		bodyguard_title_accepted_effect = scope:peasant
 		scope:peasant = {
 			marry = scope:wife
 			#add_pressed_claim = { target = root}
@@ -239,25 +346,87 @@ longju_random.0102 = {#lost
 	}
 
 }
+
 longju_random.0003 = {
 	type = character_event
 	title = longju_random.0003.t
 	desc = longju_random.0003.desc
 	theme = realm
-	option = {
-		name = longju_random.0003.a
+	right_portrait = {
+		character = root
+		animation = thinking
 	}
-	option = {
+	left_portrait = {
+		character = scope:wife
+		animation = worry
+	}
+	trigger = {
+		scope:wife = {
+			is_alive = YES
+		}
+	}
+	option = { #do
+		name = longju_random.0003.a
+		stress_impact = {
+			craven = major_stress_gain
+			forgiving = massive_stress_gain
+			content = major_stress_gain
+			trusting = major_stress_gain
+			compassionate = massive_stress_gain
+			shy = massive_stress_gain
+		}
+	}
+	option = { #not do
 		name = longju_random.0003.b
+		stress_impact = {
+			wrathful = major_stress_gain
+			vengeful = major_stress_gain
+			ambitious = massive_stress_gain
+			callous = medium_stress_gain
+			sadistic = major_stress_gain
+			paranoid = major_stress_gain
+		}
+		trigger_event = { id = longju_random.0004 months = {3 5}}
 	}
 }
 
-longju_random.0004 = {
+longju_random.0111 = { #after do
+	type = character_event
+	title = longju_random.0111.t
+	desc = longju_random.0111.desc
+	theme = realm
+	option = {
+		name = longju_random.0111.a
+	}
+}
+
+longju_random.0112 = {
+	type = character_event
+	title = longju_random.0112.t
+	desc = longju_random.0112.desc
+	theme = realm
+	option = {
+		name = longju_random.0112.a
+	}
+}
+
+longju_random.0004 = { #everything finish
 	type = character_event
 	title = longju_random.0004.t
 	desc = longju_random.0004.desc
 	theme = realm
+	left_portrait = {
+		character = scope:peasant
+		animation = ecstasy
+	}
+	right_portrait = {
+		character = root
+		animation = poison
+	}
 	option = {
 		name = longju.random.0004.a
+		root = {
+			add_trait = impotent
+		}
 	}
 }
